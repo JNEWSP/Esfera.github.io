@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esfera 3D Interativa</title>
+    <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <h2>Controles da Esfera</h2>
+            <div class="slider-container">
+                <label for="slider-range">Tamanho da Esfera</label>
+                <div class="slider" id="slider-range"></div>
+            </div>
+            <div class="slider-container">
+                <label for="slider-test">Profundidade</label>
+                <div class="slider" id="slider-test"></div>
+            </div>
+            <div class="color-controls">
+                <h3>Cores</h3>
+                <button class="color-btn default" data-color="default">Padrão</button>
+                <button class="color-btn blue" data-color="blue">Azul</button>
+                <button class="color-btn purple" data-color="purple">Roxo</button>
+                <button class="color-btn red" data-color="red">Vermelho</button>
+                <button class="color-btn rainbow" data-color="rainbow">Rainbow</button>
+            </div>
+            <div class="effects-container">
+                <h3>Efeitos Especiais</h3>
+                <div class="effects-grid">
+                    <button class="effect-btn pulse" data-effect="pulse">Efeito Pulso</button>
+                    <button class="effect-btn trail" data-effect="trail">Efeito Rastro</button>
+                    <button class="effect-btn explode" data-effect="explode">Explosão</button>
+                </div>
+            </div>
+            <div class="instructions">
+                <h3>Instruções</h3>
+                <p>Clique e arraste para girar a esfera</p>
+                <p>Use os controles para ajustar a aparência</p>
+            </div>
+        </div>
+        
+        <div class="canvas-container">
+            <canvas id="canvasOne"></canvas>
+            <p class="developer-info">Desenvolvido por João</p>
+        </div>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="main.js"></script>
+    <script>
+        // Adicione este script para mudar a cor da esfera
+        $(document).ready(function() {
+            $('.color-btn').click(function() {
+                var color = $(this).data('color');
+                changeSphereColor(color);
+            });
+
+            function changeSphereColor(color) {
+                // Esta função deve ser implementada no seu arquivo main.js
+                // para mudar a cor da esfera de acordo com a seleção
+                if (typeof updateSphereColor === 'function') {
+                    updateSphereColor(color);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
